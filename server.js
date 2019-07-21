@@ -23,6 +23,7 @@ app.get('/', function(req, res) {
 
 app.get('/api', function(req, res) {
   api.getData(function(err, data) {
+    console.log(data)
     if (err) {
       res.status(500).send(err);
     } else {
@@ -32,6 +33,7 @@ app.get('/api', function(req, res) {
 });
 
 let offlineData = JSON.parse(fs.readFileSync(path.resolve('./api_offline.json'), 'utf-8'));
+console.log(offlineData)
 app.get('/offline_api', function(req, res) {
   let data = offlineData.find(item => item.imdbID === req.query.i);
   if (!data) {
@@ -43,6 +45,6 @@ app.get('/offline_api', function(req, res) {
 app.listen(process.env.PORT, function () {
   console.log(`Example app listening on port ${process.env.PORT}!`);
   if (process.env.NODE_ENV === 'development') {
-    require('opn')(`https://cinema-vue.netlify.com/`);
+    require('opn')(`https://cinema-vue.netlify.com`);
   }
 });
