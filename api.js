@@ -7,7 +7,7 @@ moment.tz.setDefault("UTC");
 
 // Axios
 const $http = axios.create({
-  baseURL: `http://localhost:${process.env.PORT}/offline_api`,
+  baseURL: `https://cinema-vue.netlify.com/`,
 });
 
 function generateSessions(id) {
