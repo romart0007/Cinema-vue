@@ -48,7 +48,8 @@ module.exports = {
   data: [],
   getData(callback) {
     if (!this.data.length) {
-      let ids = process.env.IMDB_IDS.split(',');
+//       let ids = process.env.IMDB_IDS.split(',');
+      let ids = [tt0379225,tt1172203,tt1727587,tt1352852,tt1379199,tt1562881,tt0489037,tt1783305,tt4479976].split(',');
       let data = [];
       async.each(
         ids,
