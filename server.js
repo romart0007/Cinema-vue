@@ -21,7 +21,7 @@ app.get('/', function(req, res) {
   res.send(template);
 });
 
-app.get('/api', function(req, res) {
+app.get('/api.js', function(req, res) {
   api.getData(function(err, data) {
     if (err) {
       res.status(500).send(err);
