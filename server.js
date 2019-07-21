@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fs = require('fs');
-const api = require('./api');
+const api = require('api');
 
 if (process.env.NODE_ENV === 'development') {
   require('./webpack-dev-middleware').init(app);
@@ -21,7 +21,7 @@ app.get('/', function(req, res) {
   res.send(template);
 });
 
-app.get('/api.js', function(req, res) {
+app.get('/api', function(req, res) {
   api.getData(function(err, data) {
     if (err) {
       res.status(500).send(err);
