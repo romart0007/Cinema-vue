@@ -16,7 +16,9 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import routes from './util/routes';
-const router = new VueRouter({ routes });
+const router = new VueRouter({ 
+    mode: 'history',
+    routes });
 
 import Tooltip from './util/tooltip';
 Vue.use(Tooltip);
